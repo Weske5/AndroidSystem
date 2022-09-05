@@ -48,7 +48,7 @@
     adb remount
 ```  
 
-   移动用户目录证书到系统证书目录  
+   - 移动用户目录证书到系统证书目录  
    `mv -f /data/misc/user/0/cacerts-added/* /system/etc/security/cacerts`  
    删除用户凭据  
    打开设置 --> 安全 --> 加密与凭据 --> 用户凭据 --> 选择一个用户凭据删除
