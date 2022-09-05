@@ -39,7 +39,7 @@
 `adb push Charles.pem /sdcard/`  
 打开设置 --> 安全 --> 加密与凭据 --> 从存储设备安装  
 选择sdcard目录，然后点击Charles.pem证书安装
-     - 1.2 移动证书到系统目录  
+   - 1.2 移动证书到系统目录  
      依次运行以下adb命令，挂载system为可读写
 ```shell
     adb root
