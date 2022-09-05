@@ -22,7 +22,7 @@
     pixel 3(blueline)
 2.  刷机前的准备
     - 2.1  解锁bootloader锁
-    - 2.2  通过USB连接手机至电脑
+    - 2.2  通过USB连接手机至电脑  
         需要打开USB调试，找不到设备的，还需要安装谷歌USB驱动，驱动可通过Android Studio下载。
     - 2.3 配置好adb和fastboot
         将Android SDK里的platform-tools路径，添加到环境变量PATH中。
