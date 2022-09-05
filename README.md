@@ -17,7 +17,7 @@
 10. smali trace
 
 ## 使用方法：
-1. 目前支持两个设备
+1. 目前支持两个设备  
     pixel 1(sailfish)
     pixel 3(blueline)
 2.  刷机前的准备
