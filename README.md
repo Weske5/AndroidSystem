@@ -83,8 +83,8 @@ Gadget的so存放于 `/system/lib/libxiaojianbang.so` 和 `/system/lib64/libxiao
 
 ### 4. 抽取加固脱壳
 创建目录 `/data/local/tmp/xiaojianbang/包名/saveDex`，即开启该功能。  
-打开app等待一分钟自动开启主动调用，脱壳完成后 logcat中会显示 call run over
-将app私有目录下 `/data/data/包名/xiaojianbang` 中的 xxx.dex和xxx.bin 文件拿出来
+打开app等待一分钟自动开启主动调用，脱壳完成后 logcat中会显示 call run over  
+将app私有目录下 `/data/data/包名/xiaojianbang` 中的 xxx.dex和xxx.bin 文件拿出来  
 使用 dexfixer.jar 修复  
     ```shell
     java -jar dexfixer.jar xxx.dex xxx.bin out.dex
