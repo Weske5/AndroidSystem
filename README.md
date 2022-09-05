@@ -1,7 +1,7 @@
 # 小肩膀教育安卓定制系统
 > 持续输出高质量课程，课程咨询小肩膀QQ：24358757  
 > 小肩膀定制系统百度网盘地址：
-> 链接：https://pan.baidu.com/s/1bfkY8MOKdWGpVRWa522C2A 提取码：9822
+> 链接：https://pan.baidu.com/s/1bfkY8MOKdWGpVRWa522C2A 提取码：9822  
 > b站视频介绍：https://www.bilibili.com/video/BV1rY4y1M7Me
 
 ## 定制系统目前的功能：
