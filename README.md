@@ -125,7 +125,7 @@ function hook_strstr() {
 ```
 
 
-7. ### smali trace
+6. ### smali trace
     需要通过hook开启
 hook libc.so的strstr函数，当参数1为shouldTrace时，将函数返回值设置为1
 当参数1为traceLog时，打印参数0和参数1即可，frida hook代码如下：
