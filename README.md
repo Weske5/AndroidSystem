@@ -22,21 +22,17 @@
 2.  刷机前的准备
     - 2.1  解锁bootloader锁
     - 2.2  通过USB连接手机至电脑
-        需要打开USB调试
-        找不到设备的，还需要安装谷歌USB驱动
-        驱动可通过Android Studio下载
+        需要打开USB调试，找不到设备的，还需要安装谷歌USB驱动，驱动可通过Android Studio下载。
     - 2.3 配置好adb和fastboot
-        将Android SDK里的platform-tools路径，添加到环境变量PATH中
+        将Android SDK里的platform-tools路径，添加到环境变量PATH中。
 3.  运行刷机脚本即可
     - Windows运行flash-all.bat
     - Linux和Mac运行flash-all.sh
 4. 刷机包说明  
-   - blueline刷机包里没有去掉su
-可以先将system挂载为可读写，然后给su改个名字即可
-定制系统里的adb本身就是root权限，不需要su
+   - blueline刷机包里没有去掉su，可以先将system挂载为可读写，然后给su改个名字即可，定制系统里的adb本身就是root权限，不需要su。
 
 ## 功能说明：
-1. ### 抓包证书移动到系统目录
+### 1. 抓包证书移动到系统目录
    - 1.1 将证书安装到用户目录    
 从Charles中保存根证书，这里将其保存为Charles.pem  
 将证书推送到手机sdcard目录
@@ -60,7 +56,7 @@
    证书效期可按以下方法查看：  
    打开设置 --> 安全 --> 加密与凭据 --> 信任的凭据 --> 系统 --> 点击证书
 
-2. ### Frida持久化
+### 2. Frida持久化
    将GadgetConfig.js推送至 `/data/local/tmp/xiaojianbang/`包名，即开启该功能
 注意事项  
 GadgetConfig.js文件名称不可更改  
@@ -80,11 +76,11 @@ hook脚本路径及名称可自行指定,
 Gadget的so存放于 `/system/lib/libxiaojianbang.so` 和 `/system/lib64/libxiaojianbang.so`,
 可自行替换版本，支持官网Gadget运行所支持的任意模式
 
-3. ### 整体加固脱壳
+### 3. 整体加固脱壳
     打开app，只要dex有加载，就会保存在app的私有目录下
 `/data/data/包名/xiaojianbang`
 
-4. ### 抽取加固脱壳
+### 4. 抽取加固脱壳
     创建目录 `/data/local/tmp/xiaojianbang/包名/saveDex`，即开启该功能
 打开app等待一分钟自动开启主动调用，脱壳完成后 logcat中会显示 call run over
 将app私有目录下 `/data/data/包名/xiaojianbang` 中的 xxx.dex和xxx.bin 文件拿出来
@@ -95,7 +91,7 @@ Gadget的so存放于 `/system/lib/libxiaojianbang.so` 和 `/system/lib64/libxiao
     out.dex就是最终脱壳完毕的dex
 脱壳完毕，记得删除 `/data/local/tmp/xiaojianbang/包名` 目录，否则每次打开都会脱壳
 
-5. ### 追踪函数调用
+### 5. 追踪函数调用
     需要通过hook开启
 hook libc.so的strstr函数，当参数1为xiaojianbang_javaCall或者xiaojianbang_jniCall时，打印参数0和参数1即可，frida hook代码如下：
 ```js
@@ -125,7 +121,7 @@ function hook_strstr() {
 ```
 
 
-6. ### smali trace
+### 6. smali trace
     需要通过hook开启
 hook libc.so的strstr函数，当参数1为shouldTrace时，将函数返回值设置为1
 当参数1为traceLog时，打印参数0和参数1即可，frida hook代码如下：
@@ -148,4 +144,5 @@ function hook_strstr() {
     });
 }
 ```
+
 
