@@ -39,14 +39,15 @@
 `adb push Charles.pem /sdcard/`  
 打开设置 --> 安全 --> 加密与凭据 --> 从存储设备安装  
 选择sdcard目录，然后点击Charles.pem证书安装
-   - 1.2 移动证书到系统目录  
-   依次运行以下adb命令，挂载system为可读写
-   ```shell
-   adb root
-   adb disable-verity
-   adb reboot
-   adb remount
-   ```
+     - 1.2 移动证书到系统目录  
+     依次运行以下adb命令，挂载system为可读写
+```shell
+    adb root
+    adb disable-verity
+    adb reboot
+    adb remount
+```  
+
    移动用户目录证书到系统证书目录  
    `mv -f /data/misc/user/0/cacerts-added/* /system/etc/security/cacerts`  
    删除用户凭据  
@@ -57,11 +58,11 @@
    打开设置 --> 安全 --> 加密与凭据 --> 信任的凭据 --> 系统 --> 点击证书
 
 ### 2. Frida持久化
-   将GadgetConfig.js推送至 `/data/local/tmp/xiaojianbang/`包名，即开启该功能
-注意事项  
-GadgetConfig.js文件名称不可更改  
-GadgetConfig.js中的内容与Frida官网介绍的配置内容一致  
-Frida官网Gadget介绍地址：`https://frida.re/docs/gadget/`  
+   将GadgetConfig.js推送至 `/data/local/tmp/xiaojianbang/`包名，即开启该功能  
+   注意事项  
+   GadgetConfig.js文件名称不可更改。  
+   GadgetConfig.js中的内容与Frida官网介绍的配置内容一致。  
+   Frida官网Gadget介绍地址：`https://frida.re/docs/gadget/`  
 比如，GadgetConfig.js中的内容为：
    ```json
     {
@@ -77,22 +78,22 @@ Gadget的so存放于 `/system/lib/libxiaojianbang.so` 和 `/system/lib64/libxiao
 可自行替换版本，支持官网Gadget运行所支持的任意模式
 
 ### 3. 整体加固脱壳
-    打开app，只要dex有加载，就会保存在app的私有目录下
-`/data/data/包名/xiaojianbang`
+打开app，只要dex有加载，就会保存在app的私有目录下
+`/data/data/包名/xiaojianbang`。
 
 ### 4. 抽取加固脱壳
-    创建目录 `/data/local/tmp/xiaojianbang/包名/saveDex`，即开启该功能
+创建目录 `/data/local/tmp/xiaojianbang/包名/saveDex`，即开启该功能。  
 打开app等待一分钟自动开启主动调用，脱壳完成后 logcat中会显示 call run over
 将app私有目录下 `/data/data/包名/xiaojianbang` 中的 xxx.dex和xxx.bin 文件拿出来
-使用 dexfixer.jar 修复
+使用 dexfixer.jar 修复  
     ```shell
     java -jar dexfixer.jar xxx.dex xxx.bin out.dex
-    ```
-    out.dex就是最终脱壳完毕的dex
+    ```  
+    out.dex就是最终脱壳完毕的dex。
 脱壳完毕，记得删除 `/data/local/tmp/xiaojianbang/包名` 目录，否则每次打开都会脱壳
 
 ### 5. 追踪函数调用
-    需要通过hook开启
+需要通过hook开启。
 hook libc.so的strstr函数，当参数1为xiaojianbang_javaCall或者xiaojianbang_jniCall时，打印参数0和参数1即可，frida hook代码如下：
 ```js
 function hook_strstr() {
@@ -122,8 +123,8 @@ function hook_strstr() {
 
 
 ### 6. smali trace
-    需要通过hook开启
-hook libc.so的strstr函数，当参数1为shouldTrace时，将函数返回值设置为1
+需要通过hook开启。
+hook libc.so的strstr函数，当参数1为shouldTrace时，将函数返回值设置为1，
 当参数1为traceLog时，打印参数0和参数1即可，frida hook代码如下：
 ```javascript
 function hook_strstr() {
@@ -144,5 +145,7 @@ function hook_strstr() {
     });
 }
 ```
+
+
 
 
