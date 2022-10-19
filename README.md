@@ -4,6 +4,9 @@
 > 链接：https://pan.baidu.com/s/1bfkY8MOKdWGpVRWa522C2A 提取码：9822  
 ## b站视频介绍：https://www.bilibili.com/video/BV1rY4y1M7Me
 
+## 小肩膀安卓逆向的书《安卓应用安全实战-Frida协议分析》，淘宝，当当，京东都有售
+## 另有全套安卓逆向课程，小肩膀独家录制，可到b站试看
+
 ## 定制系统目前的功能：
 1. 防root检测
 2. 支持直接替换修改系统文件
