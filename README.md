@@ -1,7 +1,7 @@
 # 小肩膀教育安卓定制系统
 > 持续输出高质量课程，课程咨询小肩膀QQ：24358757  
 > 小肩膀定制系统百度网盘地址：
-> 链接：https://pan.baidu.com/s/1bfkY8MOKdWGpVRWa522C2A 提取码：9822  
+> 链接：https://pan.baidu.com/s/1b2i81f7XwkL3FtLqU1rkuA?pwd=8456  提取码：8456  
 ## b站视频介绍：https://www.bilibili.com/video/BV1rY4y1M7Me
 
 ## 小肩膀安卓逆向的书《安卓应用安全实战-Frida协议分析》，淘宝，当当，京东都有售
